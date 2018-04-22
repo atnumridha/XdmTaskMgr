@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="com.dmcsol.xdm.taskmgr.model.service.XdmTaskMgrService">
+    <AppModuleConfig name="XdmTaskMgrServiceLocal" jbo.project="com.dmcsol.xdm.taskmgr.model.TaskMgrModel"
+                     ApplicationName="com.dmcsol.xdm.taskmgr.model.service.XdmTaskMgrService" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/XdmDS"/>
+      <Security AppModuleJndiName="com.dmcsol.xdm.taskmgr.model.service.XdmTaskMgrService"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="XdmTaskMgrServiceShared" jbo.project="com.dmcsol.xdm.taskmgr.model.TaskMgrModel"
+                     ApplicationName="com.dmcsol.xdm.taskmgr.model.service.XdmTaskMgrService" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/XdmDS"/>
+      <Security AppModuleJndiName="com.dmcsol.xdm.taskmgr.model.service.XdmTaskMgrService"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

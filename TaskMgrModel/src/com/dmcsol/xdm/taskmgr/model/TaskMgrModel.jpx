@@ -12,7 +12,16 @@
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_jprName" Value="../../../../../../TaskMgrModel.jpr"/>
     <Attr Name="_NamedConnection" Value="Xdm"/>
+    <Attr Name="_appModuleNames0" Value="com.dmcsol.xdm.taskmgr.model.service.XdmTaskMgrService"/>
   </DesignTime>
+  <Containee
+    Name="service"
+    PackageName="com.dmcsol.xdm.taskmgr.model.service"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
   <Containee
     Name="view"
     PackageName="com.dmcsol.xdm.taskmgr.model.view"
