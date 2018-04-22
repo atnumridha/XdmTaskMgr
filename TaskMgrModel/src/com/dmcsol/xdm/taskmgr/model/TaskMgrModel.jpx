@@ -29,4 +29,9 @@
       <Attr Name="_SourceName" Value="adflibXdmCommonModel.jar"/>
     </DesignTime>
   </AppContainee>
+  <AppModuleUsage
+    Name="XdmLovService"
+    FullName="com.dmcsol.xdm.model.service.XdmLovService"
+    ConfigurationName="com.dmcsol.xdm.model.service.XdmLovServiceShared"
+    SharedScope="2"/>
 </JboProject>

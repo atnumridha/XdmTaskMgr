@@ -44,6 +44,29 @@ and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||
     Name="pText"
     Kind="where"
     Type="java.lang.String"/>
+  <ViewAccessor
+    Name="XdmLovService_ServiceLOV1_1"
+    ViewObjectName="com.dmcsol.xdm.model.view.lov.ServiceLOV"
+    AMUsageName="XdmLovService"
+    ViewInstanceName="ServiceLOV1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ElemKey"
+    ListVOName="XdmLovService_ServiceLOV1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ElemKey"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ElemKey"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="XdmTasksEO"
     Entity="com.dmcsol.xdm.model.entity.XdmTasksEO"/>
@@ -53,7 +76,16 @@ and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||
     PrecisionRule="true"
     EntityAttrName="StartDate"
     EntityUsage="XdmTasksEO"
-    AliasName="START_DATE"/>
+    AliasName="START_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.StartDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.StartDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TaskId"
     IsUpdateable="while_insert"
@@ -84,7 +116,16 @@ and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||
     PrecisionRule="true"
     EntityAttrName="EndDate"
     EntityUsage="XdmTasksEO"
-    AliasName="END_DATE"/>
+    AliasName="END_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.EndDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.EndDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EndWhere"
     PrecisionRule="true"
@@ -102,7 +143,15 @@ and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||
     PrecisionRule="true"
     EntityAttrName="ElemKey"
     EntityUsage="XdmTasksEO"
-    AliasName="ELEM_KEY"/>
+    AliasName="ELEM_KEY"
+    LOVName="LOV_ElemKey">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"
