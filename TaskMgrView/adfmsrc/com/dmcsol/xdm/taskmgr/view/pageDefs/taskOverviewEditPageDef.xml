@@ -12,9 +12,9 @@
                      Name="ExecuteWithParams_pText" IsQueriable="false"/>
     </variableIterator>
     <iterator Binds="Task1" RangeSize="25" DataControl="XdmTaskMgrServiceDataControl" id="Task1Iterator"/>
+    <iterator Binds="ProgrammeLOV1" RangeSize="-1" DataControl="XdmLovServiceDataControl" id="ProgrammeLOV1Iterator"/>
     <iterator Binds="ProgrammeManagerLOV1" RangeSize="-1" DataControl="XdmLovServiceDataControl"
               id="ProgrammeManagerLOV1Iterator"/>
-    <iterator Binds="ProgrammeLOV1" RangeSize="-1" DataControl="XdmLovServiceDataControl" id="ProgrammeLOV1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="Task1Iterator" id="Task1">
@@ -37,21 +37,7 @@
       <NamedData NDName="pProgramme" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_pProgramme}"/>
       <NamedData NDName="pText" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_pText}"/>
     </action>
-    <list IterBinding="variables" id="pResponsible" DTSupportsMRU="true" SelectItemValueMode="ListObject"
-          StaticList="false" ListIter="ProgrammeManagerLOV1Iterator"
-          NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-          NullValueFlag="start">
-      <AttrNames>
-        <Item Value="ExecuteWithParams_pResponsible"/>
-      </AttrNames>
-      <ListAttrNames>
-        <Item Value="Initials"/>
-      </ListAttrNames>
-      <ListDisplayAttrNames>
-        <Item Value="Initials"/>
-      </ListDisplayAttrNames>
-    </list>
-    <list IterBinding="variables" id="pProgramme" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+    <list IterBinding="variables" id="pProgramme" DTSupportsMRU="true"
           StaticList="false" ListIter="ProgrammeLOV1Iterator"
           NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
           NullValueFlag="start">
@@ -70,5 +56,23 @@
         <Item Value="ExecuteWithParams_pText"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="variables" id="pResponsible" DTSupportsMRU="true"
+          StaticList="false" ListIter="ProgrammeManagerLOV1Iterator"
+          NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+          NullValueFlag="start">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_pResponsible"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="PersId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Initials"/>
+      </ListDisplayAttrNames>
+    </list>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="XdmTaskMgrServiceDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="XdmTaskMgrServiceDataControl"/>
   </bindings>
 </pageDefinition>

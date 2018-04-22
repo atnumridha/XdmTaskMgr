@@ -83,6 +83,8 @@ and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||
           ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.StartDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.StartDate_FMT_FORMATTER"/>
+        <LABEL
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.StartDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -104,13 +106,27 @@ and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||
     PrecisionRule="true"
     EntityAttrName="StartWhere"
     EntityUsage="XdmTasksEO"
-    AliasName="START_WHERE"/>
+    AliasName="START_WHERE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.StartWhere_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FlightNo"
     PrecisionRule="true"
     EntityAttrName="FlightNo"
     EntityUsage="XdmTasksEO"
-    AliasName="FLIGHT_NO"/>
+    AliasName="FLIGHT_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.FlightNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EndDate"
     PrecisionRule="true"
@@ -131,7 +147,14 @@ and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||
     PrecisionRule="true"
     EntityAttrName="EndWhere"
     EntityUsage="XdmTasksEO"
-    AliasName="END_WHERE"/>
+    AliasName="END_WHERE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.EndWhere_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Pax"
     PrecisionRule="true"
@@ -147,6 +170,8 @@ and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||
     LOVName="LOV_ElemKey">
     <Properties>
       <SchemaBasedProperties>
+        <LABEL
+          ResId="com.dmcsol.xdm.taskmgr.model.view.TaskVO.ElemKey_LABEL"/>
         <CONTROLTYPE
           Value="choice"/>
       </SchemaBasedProperties>

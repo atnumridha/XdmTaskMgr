@@ -141,6 +141,12 @@
         <af:gridRow height="50px" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                 <!-- Footer -->
+                <af:panelGroupLayout id="pgl3" layout="horizontal">
+                    <af:button actionListener="#{bindings.Commit.execute}" text="Ok" id="b2"/>
+                    <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b3">
+                        <af:resetActionListener/>
+                    </af:button>
+                </af:panelGroupLayout>
             </af:gridCell>
         </af:gridRow>
     </af:panelGridLayout>

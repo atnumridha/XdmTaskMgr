@@ -6,6 +6,16 @@
       <id>xdm-task-flow-template</id>
     </template-reference>
     <default-activity>taskOverviewEdit</default-activity>
+    <managed-bean id="__1">
+      <managed-bean-name>buttonPressed</managed-bean-name>
+      <managed-bean-class>com.dmcsol.xdm.taskmgr.view.BackingBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__2">
+      <managed-bean-name>Backing</managed-bean-name>
+      <managed-bean-class>com.dmcsol.xdm.taskmgr.view.BackingBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <view id="taskOverviewEdit">
       <page>/taskOverviewEdit.jsff</page>
     </view>
