@@ -18,4 +18,20 @@
     <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
                             credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
   </sec:adf-security-child>
+  <adf-mds-config xmlns="http://xmlns.oracle.com/adf/mds/config">
+    <mds-config xmlns="http://xmlns.oracle.com/mds/config" version="11.1.1.000">
+      <cust-config>
+        <match path="/">
+          <customization-class name="com.dmcsol.xdm.customization.OrgLayerCC"/>
+          <customization-class name="com.dmcsol.xdm.customization.RoleLayerCC"/>
+        </match>
+      </cust-config>
+    </mds-config>
+  </adf-mds-config>
+  <adf-resourcebundle-config xmlns="http://xmlns.oracle.com/adf/resourcebundle/config">
+    <applicationBundleName>resourcebundles/xliffBundles/XdmTaskMgrOverrideBundle</applicationBundleName>
+    <bundleList>
+      <bundleId override="true">com.dmcsol.xdm.taskmgr.view.TaskMgrViewBundle</bundleId>
+    </bundleList>
+  </adf-resourcebundle-config>
 </adf-config>

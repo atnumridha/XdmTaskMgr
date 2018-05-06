@@ -1,0 +1,16 @@
+<cust-layers xmlns="http://xmlns.oracle.com/mds/dt">
+  <cust-layer name="org" id-prefix="o" 
+      value-set-size="small">
+    <cust-layer-value value="abctravel"  
+        display-name="ABC Travel" id-prefix="a"/>
+    <cust-layer-value value="xyztravel"  
+        display-name="XYZ Travel" id-prefix="x"/>
+  </cust-layer>
+  <cust-layer name="role" id-prefix="r"  
+      value-set-size="small">
+    <cust-layer-value value="normal"  
+        display-name="Normal user" id-prefix="n"/>
+    <cust-layer-value value="superuser"  
+        display-name="Superuser" id-prefix="s"/>
+  </cust-layer>
+</cust-layers>

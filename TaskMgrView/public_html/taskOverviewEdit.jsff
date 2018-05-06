@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="taskmgrviewBundle" value="#{adfBundle['com.dmcsol.xdm.taskmgr.view.TaskMgrViewBundle']}"/>
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="50px" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
@@ -39,7 +40,7 @@
                           rowBandingInterval="0" fetchSize="#{bindings.Task1.rangeSize}" id="t1"
                           columnStretching="column:c2" partialTriggers="::b1">
                     <af:column sortProperty="#{bindings.Task1.hints.StartDate.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.StartDate.label}" id="c1" width="100">
+                               headerText="#{taskmgrviewBundle.START_DATE_COLUMN_LABEL}" id="c1" width="100">
                         <af:inputDate value="#{row.bindings.StartDate.inputValue}"
                                       label="#{bindings.Task1.hints.StartDate.label}"
                                       required="#{bindings.Task1.hints.StartDate.mandatory}"
@@ -50,7 +51,7 @@
                         </af:inputDate>
                     </af:column>
                     <af:column sortProperty="#{bindings.Task1.hints.Text.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.Text.label}" id="c2" width="101">
+                               headerText="#{taskmgrviewBundle.TEXT_COLUMN_LABEL}" id="c2" width="101">
                         <af:inputText value="#{row.bindings.Text.inputValue}" label="#{bindings.Task1.hints.Text.label}"
                                       required="#{bindings.Task1.hints.Text.mandatory}"
                                       columns="#{bindings.Task1.hints.Text.displayWidth}"
@@ -60,7 +61,7 @@
                         </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.Task1.hints.StartWhere.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.StartWhere.label}" id="c3" width="99">
+                               headerText="#{taskmgrviewBundle.START_WHERE_COLUMN_LABEL}" id="c3" width="99">
                         <af:inputText value="#{row.bindings.StartWhere.inputValue}"
                                       label="#{bindings.Task1.hints.StartWhere.label}"
                                       required="#{bindings.Task1.hints.StartWhere.mandatory}"
@@ -71,7 +72,7 @@
                         </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.Task1.hints.FlightNo.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.FlightNo.label}" id="c4" width="100">
+                               headerText="#{taskmgrviewBundle.FLIGHT_NO_COLUMN_LABEL}" id="c4" width="100">
                         <af:inputText value="#{row.bindings.FlightNo.inputValue}"
                                       label="#{bindings.Task1.hints.FlightNo.label}"
                                       required="#{bindings.Task1.hints.FlightNo.mandatory}"
@@ -82,7 +83,7 @@
                         </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.Task1.hints.EndDate.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.EndDate.label}" id="c5" width="100">
+                               headerText="#{taskmgrviewBundle.END_DATE_COLUMN_LABEL}" id="c5" width="100">
                         <af:inputDate value="#{row.bindings.EndDate.inputValue}"
                                       label="#{bindings.Task1.hints.EndDate.label}"
                                       required="#{bindings.Task1.hints.EndDate.mandatory}"
@@ -93,7 +94,7 @@
                         </af:inputDate>
                     </af:column>
                     <af:column sortProperty="#{bindings.Task1.hints.EndWhere.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.EndWhere.label}" id="c6" width="100">
+                               headerText="#{taskmgrviewBundle.END_WHERE_COLUMN_LABEL}" id="c6" width="100">
                         <af:inputText value="#{row.bindings.EndWhere.inputValue}"
                                       label="#{bindings.Task1.hints.EndWhere.label}"
                                       required="#{bindings.Task1.hints.EndWhere.mandatory}"
@@ -104,7 +105,7 @@
                         </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.Task1.hints.Pax.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.Pax.label}" id="c7" width="100">
+                               headerText="#{taskmgrviewBundle.PAX_COLUMN_LABEL}" id="c7" width="100">
                         <af:inputText value="#{row.bindings.Pax.inputValue}" label="#{bindings.Task1.hints.Pax.label}"
                                       required="#{bindings.Task1.hints.Pax.mandatory}"
                                       columns="#{bindings.Task1.hints.Pax.displayWidth}"
@@ -115,7 +116,7 @@
                         </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.Task1.hints.ElemKey.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.ElemKey.label}" id="c8" width="100">
+                               headerText="#{taskmgrviewBundle.SERVICE_COLUMN_LABEL}" id="c8" width="100">
                         <af:selectOneChoice value="#{row.bindings.ElemKey.inputValue}"
                                             label="#{row.bindings.ElemKey.label}"
                                             required="#{bindings.Task1.hints.ElemKey.mandatory}"
@@ -125,7 +126,7 @@
                         </af:selectOneChoice>
                     </af:column>
                     <af:column sortProperty="#{bindings.Task1.hints.Remarks.name}" sortable="true"
-                               headerText="#{bindings.Task1.hints.Remarks.label}" id="c9" width="100">
+                               headerText="#{taskmgrviewBundle.REMARKS_COLUMN_LABEL}" id="c9" width="100">
                         <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                       label="#{bindings.Task1.hints.Remarks.label}"
                                       required="#{bindings.Task1.hints.Remarks.mandatory}"
